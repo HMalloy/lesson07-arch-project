@@ -24,6 +24,16 @@ h3 {
   font-size: 17px;
 }
 
+a, a:visited {
+  text-decoration: none;
+  color:#03a3df;
+  transition: 0.2s color;
+}
+
+a:hover, a:active {
+  color:#1b447f;
+}
+
 /* ---- Header ---- */
 
 header {
@@ -46,6 +56,10 @@ nav a {
   position: relative;
   font-weight:bold;
   transition: 0.2s color;
+}
+
+nav a:visited {
+  color:#ffffff;
 }
 
 nav a:hover {
@@ -81,6 +95,30 @@ main {
 .call-out {
   font-size: 30px;
   color:#03a3df;
+}
+
+.cta-group {
+  margin-top:50px;
+}
+
+.cta-group h2 {
+  background-color: #1b447f;
+  color: #ecb722;
+  padding:10px 20px;
+  font-weight: normal;
+}
+
+.cta-link {
+  text-decoration: none;
+  color:#03a3df;
+  text-transform: uppercase;
+  font-size: .9rem;
+  font-weight: bold;
+  transition: 0.2s color;
+}
+
+.cta-link:hover {
+  color:#1b447f;
 }
 
 /* -- instructors --*/
@@ -132,4 +170,9 @@ footer nav a:first-child {
 .row-4-columns .class {
   display: grid;
   grid-template-rows: auto 3fr auto auto 2fr;
+}
+
+.row-2-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
