@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: arial, sans-serif;
+  margin:0;
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 17px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 17px;
+}
+
+/* ---- Header ---- */
+
+header {
+  display: flex;
+  padding:50px 20px;
+  justify-content: space-between;
+  align-items: center;
+  background:#03a3df;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  padding:20px;
+  text-decoration: none;
+  color:#ffffff;
+  position: relative;
+  font-weight:bold;
+  transition: 0.2s color;
+}
+
+nav a:hover {
+  color:#1b447f;
+}
+
+nav a::after {
+  display: block;
+  position: absolute;
+  right: 0;
+  top:20px;
+  content:"/"
+}
+
+nav a:hover::after {
+  color:#ffffff;
+}
+
+
+nav a:last-child::after {
+  content:" "
+}
+
+/* ---- main ---- */
+main {
+  display: block;
+  width: 75vw;
+  padding-top:50px;
+  margin:0 auto;
+  height: 100%;
+}
+
+.call-out {
+  font-size: 30px;
+  color:#03a3df;
+}
+
+/* -- instructors --*/
+.instructor h3 {
+  font-size: 2rem;
+  color: #03a3df;
+  padding-bottom:20px;
+  border-bottom:1px solid #03a3df;
+}
+
+/* -- classes & lessons --*/
+.lessons .cost {
+  padding-bottom:30px;
+  border-bottom:1px solid #ecb722;
+}
+
+.class h2 {
+  margin-bottom:0;
+  color: #03a3df;
+}
+
+/* ---- footer ---- */
+footer {
+  background: #03a3df url('images/footerImage.jpg') repeat center;
+  margin:0;
+  color:#ffffff;
+  margin-top:100px;
+  padding:50px 20px;
+  width: 100%;
+}
+
+footer nav {
+  justify-content: flex-start;
+  align-content: center;
+}
+
+footer nav a:first-child {
+  padding-left: 0;
+}
+
+/* ---- grid ---- */
+
+.row-4-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 30px;
+}
+
+.row-4-columns .class {
+  display: grid;
+  grid-template-rows: auto 3fr auto auto 2fr;
+}
