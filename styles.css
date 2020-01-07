@@ -5,10 +5,9 @@
 body {
   font-family: arial, sans-serif;
   margin:0;
-  height:100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   font-size: 17px;
 }
 
@@ -148,6 +147,7 @@ footer {
   margin-top:100px;
   padding:50px 20px;
   width: 100%;
+  clear:both;
 }
 
 footer nav {
@@ -161,6 +161,20 @@ footer nav a:first-child {
 
 /* ---- grid ---- */
 
+/* ---- we aren't quite there yet, but I would probably create a media querie that checks whether or not the browser supports the grid and then put all of my grid styles in there and do a separate set of grid styles for browsers that do not that exists outside of that querie --- */
+
+/*.row-4-columns {
+  display:block;
+  clear:both;
+}
+
+.row-4-columns > * {
+  display: block;
+  float:left;
+  width:22%;
+  margin-right:15px;
+}*/
+
 .row-4-columns {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -171,6 +185,18 @@ footer nav a:first-child {
   display: grid;
   grid-template-rows: auto 3fr auto auto 2fr;
 }
+
+/*.row-2-columns {
+  display: block;
+  clear:both;
+}
+
+.row-2-columns > * {
+  display: block;
+  float:left;
+  width:48%;
+  margin-right:20px;
+}*/
 
 .row-2-columns {
   display: grid;
