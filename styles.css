@@ -134,6 +134,7 @@ main {
   border-bottom:1px solid #ecb722;
 }
 
+.lessons h2,
 .class h2 {
   margin-bottom:0;
   color: #03a3df;
@@ -161,32 +162,20 @@ footer nav a:first-child {
 
 /* ---- grid ---- */
 
-/* ---- we aren't quite there yet, but I would probably create a media querie that checks whether or not the browser supports the grid and then put all of my grid styles in there and do a separate set of grid styles for browsers that do not that exists outside of that querie --- */
-
-/*.row-4-columns {
+/*-- for browsers that do not support grid features --*/
+.row-4-columns {
   display:block;
   clear:both;
 }
 
 .row-4-columns > * {
-  display: block;
+  display: inline-block;
   float:left;
   width:22%;
   margin-right:15px;
-}*/
-
-.row-4-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-column-gap: 30px;
 }
 
-.row-4-columns .class {
-  display: grid;
-  grid-template-rows: auto 3fr auto auto 2fr;
-}
-
-/*.row-2-columns {
+.row-2-columns {
   display: block;
   clear:both;
 }
@@ -196,9 +185,74 @@ footer nav a:first-child {
   float:left;
   width:48%;
   margin-right:20px;
-}*/
+}
 
-.row-2-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.smaller-screens {
+  display: none;
+}
+
+/*-- screensizes w/o grid support --*/
+
+@media screen and (max-width:1055px) {
+  .row-4-columns > * {
+    width:45%;
+    float:left;
+  }
+  .smaller-screens {
+    display: block;
+  }
+}
+
+@media screen and (max-width:650px) {
+  .row-2-columns > *,
+  .row-4-columns > * {
+    float: none;
+    width:100%;
+    margin-right:0;
+  }
+}
+
+/*--- for browsers that support grid features --*/
+@supports (grid-area:auto) {
+  .row-2-columns > *,
+  .row-4-columns > * {
+    width:auto;
+  }
+
+  .row-2-columns iframe {
+    width:90%;
+  }
+
+  .row-2-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .row-4-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 30px;
+  }
+
+  .row-4-columns .class {
+    display: grid;
+    grid-template-rows: auto 3fr auto auto 2fr;
+  }
+
+  /*-- screensizes w/ grid support --*/
+  @media screen and (min-width:650px) {
+    .row-2-columns,
+    .row-4-columns {
+      grid-template-columns: 1fr;
+      grid-column-gap: 0;
+    }
+  }
+
+  @media screen and (min-width:1050px) {
+    .row-2-columns,
+    .row-4-columns {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
 }
