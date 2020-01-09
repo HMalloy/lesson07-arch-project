@@ -245,17 +245,17 @@ iframe {
 
   /*-- screensizes w/ grid support --*/
 
-  @media screen and (max-width:1050px) {
+  @media only screen and (min-width:651px) and (max-width:1050px) {
     .row-2-columns,
     .row-4-columns {
       grid-template-columns: 1fr 1fr;
     }
   }
 
-  @media screen and (max-width:650px) {
+  @media only screen and (min-width:100px) and (max-width:650px) {
     .row-2-columns,
     .row-4-columns {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
     }
   }
 
