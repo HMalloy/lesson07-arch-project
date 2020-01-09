@@ -191,6 +191,10 @@ footer nav a:first-child {
   display: none;
 }
 
+iframe {
+  border:0;
+}
+
 /*-- screensizes w/o grid support --*/
 
 @media screen and (max-width:1055px) {
@@ -240,15 +244,15 @@ footer nav a:first-child {
   }
 
   /*-- screensizes w/ grid support --*/
-  @media screen and (min-width:650px) {
+
+  @media screen and (max-width:1050px) {
     .row-2-columns,
     .row-4-columns {
-      grid-template-columns: 1fr;
-      grid-column-gap: 0;
+      grid-template-columns: 1fr 1fr;
     }
   }
 
-  @media screen and (min-width:1050px) {
+  @media screen and (max-width:650px) {
     .row-2-columns,
     .row-4-columns {
       grid-template-columns: 1fr 1fr;
